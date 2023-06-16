@@ -8,5 +8,17 @@ module MyEnumerable
     end
     value
   end
+  def any?
+    value = false
+    self.each do |element|
+      if yield(element) == true
+        value = true
+      end
+    end
+    value
+  end
   
 end
+
+
+
