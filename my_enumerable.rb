@@ -17,6 +17,14 @@ module MyEnumerable
     end
     value
   end
+
+  def filter
+    result =[]
+    self.each do |element|
+      result << element if yield(element) == true
+    end
+    result
+  end
   
 end
 
